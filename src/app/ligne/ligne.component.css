@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
+.container {
+  width: 90vw;
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.container .ligne {
+  width: 25%;
+  height: 50%;
+  font-family: "Roboto", sans-serif;
+  margin-top: 20vh;
+  margin-left: 15vw;
+}
+
+.container .ligne form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-align: left;
+}
+
+.container .ligne form .transportContainer {
+  width: 100%;
+  height: auto;
+}
+
+.container .ligne form .transportContainer .transportInput {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.container .ligne form .transportContainer .transportInput option {
+  width: 40vh;
+  height: 50vh;
+}
+
+.container .ligne form .choixLigne {
+  padding: 1vh 1vh;
+}
+
+.container .ligne form .choixSens {
+  padding: 1vh 1vh;
+}
+
+.container .ligne form .ChoixStations {
+  padding: 1vh 1vh;
+}
+
+.container .ecran {
+  width: 40%;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  font-family: "Rubik", sans-serif;
+  margin-top: 20vh;
+}
+
+.container .ecran .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.container .ecran .head .picture {
+  width: 100%;
+  height: 100%;
+}
+
+.container .ecran .head .way {
+  width: 46%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: blue;
+}
+
+.container .ecran .head .way .station {
+  font-weight: bold;
+}
+
+.container .ecran .head .way .direction {
+  font-weight: bold;
+}
+
+.container .ecran .head .time {
+  width: 36%;
+  background-color: grey;
+}
+
+.container .ecran .head .time .horloge {
+  color: white;
+}
+
+.container .listing ul li {
+  list-style-type: none;
+}
+
+.container .listing .info {
+  background-color: #fbcc00;
+}
+/*# sourceMappingURL=ligne.component.css.map */

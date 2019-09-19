@@ -1,0 +1,105 @@
+<div class="container">
+  <div class="ligne">
+    <form>
+
+      <!-- TYPES BLOCK -->
+      <div class="transportContainer">
+
+        <div class="transportInput">
+          <select id="transport">
+            <option *ngFor="let transport of transportChoix" (click)="getTransports($event.target.value)">{{ transport.result }}</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- LIGNES BLOCK -->
+      <div class="ligneContainer">
+
+        <div class="titreLigne">
+          <label for="inputLigne">LIGNE</label>
+        </div>
+
+        <div class="ligneInput">
+          <select id="inputLigne">
+            <option *ngFor="let ligne of ligneChoix" (click)="getLignes($event.target.value)">
+              {{ ligne }}
+            </option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- SENS BLOCK -->
+      <div class="sensContainer">
+
+        <div class="sensTitre">
+          <label for="inputSens">SENS</label>
+        </div>
+
+        <div class="sensInput">
+          <select id="inputSens">
+            <option *ngFor="let sens of sensListe" [value]="sens">
+                {{ sens }}
+              </option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- STATIONS BLOCK -->
+      <div class="stationsContainer">
+
+        <div class="stationTitre">
+          <label for="inputStations">STATIONS</label>
+        </div>
+
+        <div class="stationsInput">
+          <select id="inputStations">
+            <option *ngFor="let station of stationListe" [value]="station">
+                {{ station }}
+              </option>
+          </select>
+        </div>
+
+      </div>
+
+    </form>
+  </div>
+
+  <!-- ECRAN BLOCK -->
+  <div class="ecran">
+
+    <div class="head">
+  
+      <div class="picture">
+        <img src="./img/logo-{{type}}.png" alt="ico-ligne">
+      </div>
+  
+      <div class="way">
+        <div class="station">
+          Station:
+        </div>
+        <div class="direction">
+          Direction:
+        </div>
+      </div>
+  
+      <div class="time">
+        <div class="horloge">
+          {{ dateObj | date:'HH:mm' }}
+        </div>
+      </div>
+  
+    </div>
+  
+    <div class="listing">
+      <ul>
+        <li></li>
+      </ul>
+      <div class="info"></div>
+    </div>
+  
+  </div>
+
+</div>
