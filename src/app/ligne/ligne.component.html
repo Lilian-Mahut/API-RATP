@@ -1,28 +1,35 @@
-<div class="container">
-  <div class="ligne">
-    <form>
+<div class="mainContainer">
+
+  <div class="containerChoix">
+
+    <form [formGroup]="ratpForm">
 
       <!-- TYPES BLOCK -->
-      <div class="transportContainer">
+      <div class="block">
 
-        <div class="transportInput">
-          <select id="transport">
-            <option *ngFor="let transport of transportChoix" (click)="getTransports($event.target.value)">{{ transport.result }}</option>
-          </select>
+        <div class="titre">
+          <label for="choixTransport">TRANSPORT</label>
         </div>
-
+  
+        <div class="input">
+          <select id="choixTransport" formControlName="transport">
+            <option *ngFor="let transport of transportListe">{{ transport}}</option>
+          </select>
+        <!-- <img src="./../../assets/img/logo-metro.png" alt="logo-métro">
+        <img src="./../../assets/img/logo-rer.png" alt="logo-rer">
+        <img src="./../../assets/img/logo-tram.png" alt="logo-tramway"> -->
       </div>
 
       <!-- LIGNES BLOCK -->
-      <div class="ligneContainer">
+      <div class="block">
 
-        <div class="titreLigne">
-          <label for="inputLigne">LIGNE</label>
+        <div class="titre">
+          <label for="choixLigne">LIGNE</label>
         </div>
 
-        <div class="ligneInput">
-          <select id="inputLigne">
-            <option *ngFor="let ligne of ligneChoix" (click)="getLignes($event.target.value)">
+        <div class="input">
+          <select id="choixLigne" formControlName="ligne">
+            <option *ngFor="let ligne of ligne">
               {{ ligne }}
             </option>
           </select>
@@ -31,15 +38,15 @@
       </div>
 
       <!-- SENS BLOCK -->
-      <div class="sensContainer">
+      <div class="block">
 
-        <div class="sensTitre">
-          <label for="inputSens">SENS</label>
+        <div class="titre">
+          <label for="direction">DIRECTION</label>
         </div>
 
-        <div class="sensInput">
-          <select id="inputSens">
-            <option *ngFor="let sens of sensListe" [value]="sens">
+        <div class="input">
+          <select id="direction" formControlName="direction">
+            <option *ngFor="let direction of direction">
                 {{ sens }}
               </option>
           </select>
@@ -48,15 +55,15 @@
       </div>
 
       <!-- STATIONS BLOCK -->
-      <div class="stationsContainer">
+      <div class="block">
 
-        <div class="stationTitre">
-          <label for="inputStations">STATIONS</label>
+        <div class="titre">
+          <label for="stations">STATIONS</label>
         </div>
 
-        <div class="stationsInput">
-          <select id="inputStations">
-            <option *ngFor="let station of stationListe" [value]="station">
+        <div class="input">
+          <select id="stations" name="station"  formControlName="station">
+            <option *ngFor="let station of stationListe">
                 {{ station }}
               </option>
           </select>
@@ -68,7 +75,7 @@
   </div>
 
   <!-- ECRAN BLOCK -->
-  <div class="ecran">
+  <div class="containerEcran">
 
     <div class="head">
   

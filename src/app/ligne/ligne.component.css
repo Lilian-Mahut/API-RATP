@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
-.container {
+.mainContainer {
   width: 90vw;
   height: 90vh;
   display: -webkit-box;
@@ -12,7 +12,7 @@
           flex-flow: row wrap;
 }
 
-.container .ligne {
+.mainContainer .containerChoix {
   width: 25%;
   height: 50%;
   font-family: "Roboto", sans-serif;
@@ -20,7 +20,7 @@
   margin-left: 15vw;
 }
 
-.container .ligne form {
+.mainContainer .containerChoix form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,12 +34,12 @@
   text-align: left;
 }
 
-.container .ligne form .transportContainer {
+.mainContainer .containerChoix form .block {
   width: 100%;
   height: auto;
 }
 
-.container .ligne form .transportContainer .transportInput {
+.mainContainer .containerChoix form .block .titre {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,24 +50,11 @@
           flex-flow: row nowrap;
 }
 
-.container .ligne form .transportContainer .transportInput option {
-  width: 40vh;
-  height: 50vh;
+.mainContainer .containerChoix form .block .input {
+  padding: 1vh 1vw;
 }
 
-.container .ligne form .choixLigne {
-  padding: 1vh 1vh;
-}
-
-.container .ligne form .choixSens {
-  padding: 1vh 1vh;
-}
-
-.container .ligne form .ChoixStations {
-  padding: 1vh 1vh;
-}
-
-.container .ecran {
+.mainContainer .containerEcran {
   width: 40%;
   height: 70%;
   display: -webkit-box;
@@ -81,7 +68,7 @@
   margin-top: 20vh;
 }
 
-.container .ecran .head {
+.mainContainer .containerEcran .head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,12 +78,12 @@
           flex-flow: row nowrap;
 }
 
-.container .ecran .head .picture {
+.mainContainer .containerEcran .head .picture {
   width: 100%;
   height: 100%;
 }
 
-.container .ecran .head .way {
+.mainContainer .containerEcran .head .way {
   width: 46%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -110,28 +97,28 @@
   color: blue;
 }
 
-.container .ecran .head .way .station {
+.mainContainer .containerEcran .head .way .station {
   font-weight: bold;
 }
 
-.container .ecran .head .way .direction {
+.mainContainer .containerEcran .head .way .direction {
   font-weight: bold;
 }
 
-.container .ecran .head .time {
+.mainContainer .containerEcran .head .time {
   width: 36%;
   background-color: grey;
 }
 
-.container .ecran .head .time .horloge {
+.mainContainer .containerEcran .head .time .horloge {
   color: white;
 }
 
-.container .listing ul li {
+.mainContainer .listing ul li {
   list-style-type: none;
 }
 
-.container .listing .info {
+.mainContainer .listing .info {
   background-color: #fbcc00;
 }
 /*# sourceMappingURL=ligne.component.css.map */

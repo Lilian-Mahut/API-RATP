@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-ligne',
@@ -9,11 +10,11 @@ import { HttpClient } from '@angular/common/http'
 
 export class LigneComponent implements OnInit {
 
-  dateObj: number = Date.now();
+  dateObj: number = Date.now();   // DECLARATION HORLOGE
+  ratpForm: FormGroup;
+  transportListe: string[];
 
-  transportChoix: string[];
-
-  // uri: string = 'https://api-ratp.pierre-grimaud.fr/v4';
+  // private _apiUrl = 'https://api-ratp.pierre-grimaud.fr/v4';
 
   // transports   : uri+'/lines.result';
   // lignes       : uri+'/lines/{type}.result.{type}.{number}.code';
@@ -22,18 +23,39 @@ export class LigneComponent implements OnInit {
   // traffic      : uri+'/schedules/{type}/{ligne}/{station}/{A ou R}.result.schedules.{number}.(code + .destination).message';
   // info         : uri+'/traffic/{type}/{ligne}.result.message';
 
-  constructor(private HttpClient: HttpClient) {
+  constructor(private _httpClient: HttpClient, private fb: FormBuilder) {
+
+    // HORLOGE
+    setInterval(() => {
+      this.dateObj = Date.now();
+    }, 1);
+
   }
 
-  getTransports() {
-    return this.HttpClient.get(`https://api-ratp.pierre-grimaud.fr/v4/lines/`)
-  }
+  // getTransports() {
+  //   return this._httpClient.get(`https://api-ratp.pierre-grimaud.fr/v4/lines/lines`)
+  // }
 
-  getLignes() {
-    return this.HttpClient.get(`https://api-ratp.pierre-grimaud.fr/v4/lines/${transport}/`)
-  }
+  // getLignes() {
+  //   return this._httpClient.get(`https://api-ratp.pierre-grimaud.fr/v4/lines/metros`)
+  // }
+
+  // getDirections() {
+  //   return this._httpClient.get(`https://api-ratp.pierre-grimaud.fr/v4/destinations/`)
+  // }
+
+  // getStations() {
+  //   return this._httpClient.get(`this._apiUrl`)
+  // }
 
   ngOnInit() {
-    this.transportChoix = ['metros', 'RERs', 'tramway'];
-  }
+    this.transportListe = ["metros", "rers", "tramways"];
+
+    this.ratpForm = this.fb.group({
+      transport : ['',[Validators.required]],
+      ligne     : ['', [Validators.required]],
+      direction : ['', [Validators.required]],
+      station   : ['', [Validators.required]]
+    })
+   }
 }
