@@ -1,8 +1,7 @@
 <div class="mainContainer">
 
   <div class="containerChoix">
-
-    <form [formGroup]="ratpForm">
+    <form>
 
       <!-- TYPES BLOCK -->
       <div class="block">
@@ -12,12 +11,15 @@
         </div>
   
         <div class="input">
-          <select id="choixTransport" formControlName="transport">
-            <option *ngFor="let transport of transportListe">{{ transport}}</option>
+          <select name="choixTransport" id="choixTransport" (focus)="getTransports()">
+            <option *ngFor="let transport of transportListe" (click)="getTransports($event.target.value)">
+              {{ transport }}
+            </option>
           </select>
         <!-- <img src="./../../assets/img/logo-metro.png" alt="logo-métro">
         <img src="./../../assets/img/logo-rer.png" alt="logo-rer">
         <img src="./../../assets/img/logo-tram.png" alt="logo-tramway"> -->
+        </div>
       </div>
 
       <!-- LIGNES BLOCK -->
@@ -28,7 +30,7 @@
         </div>
 
         <div class="input">
-          <select id="choixLigne" formControlName="ligne">
+          <select name="choixLigne" id="choixLigne" (focus)="getLignes()">
             <option *ngFor="let ligne of ligne">
               {{ ligne }}
             </option>
@@ -41,11 +43,11 @@
       <div class="block">
 
         <div class="titre">
-          <label for="direction">DIRECTION</label>
+          <label for="choixDirection">DIRECTION</label>
         </div>
 
         <div class="input">
-          <select id="direction" formControlName="direction">
+          <select name="choixDirection" id="choixDirection" (focus)="getDirections()">
             <option *ngFor="let direction of direction">
                 {{ sens }}
               </option>
@@ -62,7 +64,7 @@
         </div>
 
         <div class="input">
-          <select id="stations" name="station"  formControlName="station">
+          <select name="choixStation" id="choixStation" (focus)="getStations()">
             <option *ngFor="let station of stationListe">
                 {{ station }}
               </option>
@@ -80,7 +82,7 @@
     <div class="head">
   
       <div class="picture">
-        <img src="./img/logo-{{type}}.png" alt="ico-ligne">
+        <img src="" alt="ico-ligne">
       </div>
   
       <div class="way">

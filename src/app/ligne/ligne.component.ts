@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+// import { ratpApiService } from './../ratpApi.service';
 
 @Component({
   selector: 'app-ligne',
@@ -11,8 +11,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LigneComponent implements OnInit {
 
   dateObj: number = Date.now();   // DECLARATION HORLOGE
-  ratpForm: FormGroup;
-  transportListe: string[];
+
+  transportListe: string;
+  transport: string;
+  tramsports: string;
+  ligneListe: string;
+  ligne: string;
+  lignes: string;
+  directionListe: string;
+  direction: string;
+  directions: string;
+  stationListe: string;
+  station: string;
+  stations: string;
 
   // private _apiUrl = 'https://api-ratp.pierre-grimaud.fr/v4';
 
@@ -23,7 +34,7 @@ export class LigneComponent implements OnInit {
   // traffic      : uri+'/schedules/{type}/{ligne}/{station}/{A ou R}.result.schedules.{number}.(code + .destination).message';
   // info         : uri+'/traffic/{type}/{ligne}.result.message';
 
-  constructor(private _httpClient: HttpClient, private fb: FormBuilder) {
+  constructor(private http: HttpClient) {
 
     // HORLOGE
     setInterval(() => {
@@ -49,13 +60,5 @@ export class LigneComponent implements OnInit {
   // }
 
   ngOnInit() {
-    this.transportListe = ["metros", "rers", "tramways"];
-
-    this.ratpForm = this.fb.group({
-      transport : ['',[Validators.required]],
-      ligne     : ['', [Validators.required]],
-      direction : ['', [Validators.required]],
-      station   : ['', [Validators.required]]
-    })
    }
 }
